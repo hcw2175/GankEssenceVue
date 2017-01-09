@@ -9,9 +9,9 @@
     <meta name="keywords" content=""/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="Bookmark" href="./favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="Bookmark" href="favicon.ico" type="image/x-icon" />
 
     <title>vue2-demo</title>
 </head>

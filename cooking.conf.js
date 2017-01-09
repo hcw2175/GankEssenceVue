@@ -12,7 +12,7 @@ cooking.set({
         vendor: ['vue', 'vue-router']
     },
 
-    chunk: ['vendor'],
+    chunk: ['vendor', 'manifest'],
 
     // 打包输出路径
     dist: './dist',
