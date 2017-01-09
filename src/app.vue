@@ -1,9 +1,12 @@
 <template>
-    <router-view></router-view>
+    <div>
+        <h1>GankEssenceVue</h1>
+        <p>干货精选 -- Vue2版本</p>
+    </div>
 </template>
 
-<script type="es6">
-  export default {
-    name: 'app'
-  };
+<script>
+    export default {
+        name: 'app'
+    };
 </script>

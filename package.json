@@ -18,19 +18,17 @@
   "bugs": {
     "url": "https://github.com/hcw2175/GankEssenceVue/issues"
   },
-  "author": "hcw2175",
+  "author": "hucw",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.15.3",
     "babel-polyfill": "*",
-    "es6-promise": "^4.0.5",
     "mint-ui": "^2.1.0",
-    "moment": "^2.17.1",
-    "qs": "^6.3.0",
     "vue": "^2.0.1",
     "vue-router": "^2.1.1"
   },
   "devDependencies": {
-    "cooking-vue2": "*"
+    "cooking-vue2": "*",
+    "css-loader": "^0.26.1"
   }
 }
