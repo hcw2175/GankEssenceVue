@@ -186,7 +186,7 @@
     // 禁止在循环中出现 function 声明和表达式
     "no-loop-func":1,
     // 禁用魔术数字(3.14什么的用常量代替)
-    "no-magic-numbers":[1,{ "ignore": [0,-1,1] }],
+    "no-magic-numbers": 0,
     // 禁止使用多个空格
     "no-multi-spaces": 2,
     // 禁止使用多行字符串，在 JavaScript 中，可以在新行之前使用斜线创建多行字符串
@@ -348,7 +348,7 @@
     // 强制在 JSX 属性中一致地使用双引号或单引号
     "jsx-quotes":0,
     // 强制在关键字前后使用一致的空格 (前后腰需要)
-    "keyword-spacing":2,
+    "keyword-spacing":0,
     // 强制一行的最大长度
     "max-len":[1,200],
     // 强制最大行数
@@ -442,7 +442,7 @@
     // 强制在圆括号内使用一致的空格
     "space-in-parens": [2, "never"],
     // 要求操作符周围有空格
-    "space-infix-ops": 2,
+    "space-infix-ops": 0,
     // 强制在一元操作符前后使用一致的空格
     "space-unary-ops": [2, { "words": true, "nonwords": false }],
     // 强制在注释中 // 或 /* 使用一致的空格

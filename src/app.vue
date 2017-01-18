@@ -1,9 +1,16 @@
 <template>
-    <router-view></router-view>
+    <div>
+        <router-view class="child-view"></router-view>
+    </div>
 </template>
 
 <script>
     export default {
-        name: 'app'
+        name: 'app',
+        created: function () {
+            if (this.$route.name === undefined){
+                return this.$router.push('home');
+            }
+        }
     };
 </script>

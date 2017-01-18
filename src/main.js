@@ -1,11 +1,10 @@
 import Vue from 'vue';
-
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
-//import './assets/scss/app.scss';
+import './assets/scss/app.scss';
 
 import App from './app';
-import router from './router';
+import router from './routers';
 import http from './components/http.js';
 
 // 使用第三方组件
