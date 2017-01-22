@@ -3,20 +3,32 @@
 
     .cover{
         height: 280px;
+        background: no-repeat center;
+        background-size: cover;
+    }
+
+    h4{
+        font-size: 14px;
+        margin: 15px 0 10px 0;
+    }
+
+    .article-item{
+        color: $text_second;
+        margin: 7px 0;
     }
 </style>
 
 <template>
     <div>
-        <div>
-            <img v-lazy="coverImage" src="" v-if="coverImage !== '' "/>
+        <div class="cover" v-bind:style="{ backgroundImage: 'url(' + coverImage + ')' }">
+            <!--<img v-lazy="coverImage" src="" v-if="coverImage !== '' "/>-->
         </div>
 
         <div class="padding">
             <div v-for="category in categories">
                 <h4>{{category}}</h4>
 
-                <p v-for="item in articles[category]">* {{item.desc}}</p>
+                <p class="article-item" v-for="item in articles[category]">* {{item.desc}}</p>
             </div>
         </div>
 

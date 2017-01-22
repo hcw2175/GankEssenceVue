@@ -1,0 +1,145 @@
+/* ----------------------------------------------
+ * 通用代码块
+ * ---------------------------------------------- */
+
+// ---------------------
+// 字体大小
+%text-size{ @include font-size($text_size); }
+%text-size-s{ @include font-size($text_size_s); }
+%text-size-m{ @include font-size($text_size_m); }
+%text-size-l{ @include font-size($text_size_l); }
+%text-size-xl{ @include font-size($text_size_xl); }
+
+// ---------------------
+// 字体图片大小
+%icon-size{ @include font-size($icon_size); }
+%icon-size-m{ @include font-size($icon_size_m); }
+%icon-size-l{ @include font-size($icon_size_l); }
+%icon-size-xl{ @include font-size($icon_size_xl); }
+%icon-size-xxl{ @include font-size($icon_size_xxl); }
+
+// ---------------------
+// padding，使用衣服尺码作为大小标识
+%padding{ padding: $s !important; }
+%padding-s{ padding: $xs !important; }
+%padding-m{ padding: $m !important; }
+%padding-l{ padding: $l !important; }
+%padding-xl{ padding: $xl !important; }
+%padding-xxl{ padding: $xxl !important; }
+
+// ---------------------
+// padding-top
+%padding-top{ padding-top: $s !important; }
+%padding-top-s{ padding-top: $xs !important; }
+%padding-top-m{ padding-top: $m !important; }
+%padding-top-l{ padding-top: $l !important; }
+%padding-top-xl{ padding-top: $xl !important; }
+%padding-top-xxl{ padding-top: $xxl !important; }
+
+// ---------------------
+// padding-bottom
+%padding-bottom{ padding-bottom: $s !important; }
+%padding-bottom-s{ padding-bottom: $xs !important; }
+%padding-bottom-m{ padding-bottom: $m !important; }
+%padding-bottom-l{ padding-bottom: $l !important; }
+%padding-bottom-xl{ padding-bottom: $xl !important; }
+%padding-bottom-xxl{ padding-bottom: $xxl !important; }
+
+// ---------------------
+// padding-left
+%padding-left{ padding-left: $s !important; }
+%padding-left-s{ padding-left: $xs !important; }
+%padding-left-m{ padding-left: $m !important; }
+%padding-left-l{ padding-left: $l !important; }
+%padding-left-xl{ padding-left: $xl !important; }
+%padding-left-xxl{ padding-left: $xxl !important; }
+
+// ---------------------
+// padding-right
+%padding-right{ padding-right: $s !important; }
+%padding-right-s{ padding-right: $xs !important; }
+%padding-right-m{ padding-right: $m !important; }
+%padding-right-l{ padding-right: $l !important; }
+%padding-right-xl{ padding-right: $xl !important; }
+%padding-right-xxl{ padding-right: $xxl !important; }
+
+// ---------------------
+// margin
+%margin{ margin: $s !important; }
+%margin-s{ margin: $xs !important; }
+%margin-m{ margin: $m !important; }
+%margin-l{ margin: $l !important; }
+%margin-xl{ margin: $xl !important; }
+%margin-xxl{ margin: $xxl !important; }
+
+// ---------------------
+// margin-top
+%margin-top{ margin-top: $s !important; }
+%margin-top-s{ margin-top: $xs !important; }
+%margin-top-m{ margin-top: $m !important; }
+%margin-top-l{ margin-top: $l !important; }
+%margin-top-xl{ margin-top: $xl !important; }
+%margin-top-xxl{ margin-top: $xxl !important; }
+
+// ---------------------
+// margin-bottom
+%margin-bottom{ margin-bottom: $s !important; }
+%margin-bottom-s{ margin-bottom: $xs !important; }
+%margin-bottom-m{ margin-bottom: $m !important; }
+%margin-bottom-l{ margin-bottom: $l !important; }
+%margin-bottom-xl{ margin-bottom: $xl !important; }
+%margin-bottom-xxl{ margin-bottom: $xxl !important; }
+
+// ---------------------
+// margin-left
+%margin-left{ margin-left: $s !important; }
+%margin-left-s{ margin-left: $xs !important; }
+%margin-left-m{ margin-left: $m !important; }
+%margin-left-l{ margin-left: $l !important; }
+%margin-left-xl{ margin-left: $xl !important; }
+%margin-left-xxl{ margin-left: $xxl !important; }
+
+// ---------------------
+// margin-right
+%margin-right{ margin-right: $s !important; }
+%margin-right-s{ margin-right: $xs !important; }
+%margin-right-m{ margin-right: $m !important; }
+%margin-right-l{ margin-right: $l !important; }
+%margin-right-xl{ margin-right: $xl !important; }
+%margin-right-xxl{ margin-right: $xxl !important; }
+
+// ---------------------
+// 元素对齐
+// 垂直居中
+%valign-center{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+
+%align-center{
+  text-align: center;
+}
+
+
+// ---------------------
+// 背景居中显示
+%bg{
+  background: no-repeat center;
+  background-size: cover;
+}
+
+// ---------------------
+// 文本不换行 、 强制换行
+%text-wrapper{
+  display: inline-block;
+  white-space:nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

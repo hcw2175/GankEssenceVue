@@ -1,0 +1,142 @@
+/* -------------------------------------------------------
+ * mixin常用函数
+ * ------------------------------------------------------- */
+
+// 边框圆角，默认3px, 使用：@include border-radius(5px)
+@mixin border-radius($radius: 3px) {
+  -webkit-border-radius: $radius !important;
+  -moz-border-radius: $radius !important;
+  border-radius: $radius !important;
+}
+
+// 阴影, 使用如：@include box-shadow(1px,1px,5px,0.2)
+@mixin box-shadow ($x: 0px, $y: 3px, $blur: 5px, $opacity: 0.2) {
+  -webkit-box-shadow: $x $y $blur rgba(0, 0, 0, $opacity);
+  -moz-box-shadow: $x $y $blur rgba(0, 0, 0, $opacity);
+  box-shadow: $x $y $blur rgba(0, 0, 0, $opacity);
+}
+
+// 元素过渡效果, 使用如：@include transition(width 2s)
+@mixin transition($transition: width 2s) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+
+// 透明度, 使用如：@include opacity(0.4)
+@mixin opacity($opacity: 0.3) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: Alpha(opacity=$opacity-ie);
+}
+
+// 2D旋转, 使用如：@include rotate(7deg)，参考：http://www.w3school.com.cn/cssref/pr_transform.asp
+@mixin rotate($degrees: 7deg) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+// 2D缩放，使用如：@include scale(2)
+@mixin scale($ratio: 2) {
+  -webkit-transform: scale($ratio);
+  -moz-transform: scale($ratio);
+  -ms-transform: scale($ratio);
+  -o-transform: scale($ratio);
+  transform: scale($ratio);
+}
+
+// 3D转换，使用如：@include translate3d(-220px,0,0)
+@mixin translate3d($x,$y,$z) {
+  -webkit-transform: translate3d($x,$y,$z);
+  -moz-transform: translate3d($x,$y,$z);
+  -ms-transform: translate3d($x,$y,$z);
+  -o-transform: translate3d($x,$y,$z);
+  transform: translate3d($x,$y,$z);
+}
+
+// 输入框默认占位文本颜色
+@mixin placeholder($color: $text_light) {
+  &:-moz-placeholder            { color: $color; } // Firefox 4-18
+  &::-moz-placeholder           { color: $color; } // Firefox 19+
+  &:-ms-input-placeholder       { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+
+// 响应式设计
+@mixin responsive-mobile() {
+  @media only screen and (max-width: $screen_mobile_max) { @content; }
+}
+@mixin responsive-tablet() {
+  @media (min-width: $screen_tablet) and (max-width: $screen_tablet_max) { @content; }
+}
+@mixin responsive-pc() {
+  @media (min-width: $screen_tablet_max) { @content; }
+}
+@mixin responsive-sm() {
+  @media (min-width: $screen_tablet) { @content; }
+}
+
+// 字体颜色
+@mixin font-color($font_color: $black-2){
+  color: $font_color !important;
+  i{ color: $font_color !important; }
+}
+
+// 字体大小
+@mixin font-size($font_size: 14px){
+  font-size: $font_size !important;
+}
+
+// 边框，使用：@include border(all|left|right|bottom|top)
+@mixin border($side: all, $bordercolor: $border){
+  @if($side == all){
+    border: 1px solid $bordercolor;
+  }
+  @else if($side == top){
+    border-top: 1px solid $bordercolor;
+  }
+  @else if($side == bottom){
+    border-bottom: 1px solid $bordercolor;
+  }
+  @else if($side == left){
+    border-left: 1px solid $bordercolor;
+  }
+  @else if($side == right){
+    border-right: 1px solid $bordercolor;
+  }
+}
+
+// 边框-虚线，使用：@include border(all|left|right|bottom|top)
+@mixin border-dashed($side: all, $bordercolor: $border){
+  @if($side == all){
+    border: 1px dashed $bordercolor;
+  }
+  @else if($side == top){
+    border-top: 1px dashed $bordercolor;
+  }
+  @else if($side == bottom){
+    border-bottom: 1px dashed $bordercolor;
+  }
+  @else if($side == left){
+    border-left: 1px dashed $bordercolor;
+  }
+  @else if($side == right){
+    border-right: 1px dashed $bordercolor;
+  }
+}
+
+// 清除浮动
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}

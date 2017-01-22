@@ -1,0 +1,195 @@
+/* ----------------------------------------------
+ * 动画mixin定义
+ * ---------------------------------------------- */
+
+// 动画持续时间
+@mixin animated($duration: 1s) {
+  -webkit-animation-duration: $duration;
+  animation-duration: $duration;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+// 定义动画keyframes
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+// 淡入动画: fadeIn
+@mixin fadeIn($duration: 1s){
+  @at-root {
+    @include keyframes(fadeIn){
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    };
+  }
+
+  @include animated($duration);
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+}
+
+// 淡出动画: fadeOut
+@mixin fadeOut($duration: 1s){
+  @at-root {
+    @include keyframes(fadeOut){
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+      }
+    };
+  }
+
+  @include animated($duration);
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+
+// 翻转进入动画：flipInX
+@mixin flipInX($duration: 1s){
+  @at-root {
+    @include keyframes(flipInX){
+      from {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+        opacity: 0;
+      }
+
+      40% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+      }
+
+      60% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+        opacity: 1;
+      }
+
+      80% {
+        -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+        transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+      }
+
+      to {
+        -webkit-transform: perspective(400px);
+        transform: perspective(400px);
+      }
+    };
+  }
+
+  @include animated($duration);
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+
+// 从左边淡入动画: fadeInLeft
+@mixin fadeInLeft($duration: 1s){
+  @at-root {
+    @include keyframes(fadeInLeft){
+      0% {
+        opacity: 0;
+        -webkit-transform: translate3d(-20px,0,0);
+        transform: translate3d(-20px,0,0);
+      }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    };
+  }
+
+  @include animated($duration);
+  -webkit-animation-name: fadeInLeft;
+          animation-name: fadeInLeft;
+}
+
+// 从右边淡入动画: fadeInRight
+@mixin fadeInRight($duration: 1s){
+  @at-root {
+    @include keyframes(fadeInRight){
+      0% {
+        opacity: 0;
+        -webkit-transform: translate3d(100%,0,0);
+        transform: translate3d(100%,0,0);
+      }
+
+      100% {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+      }
+    };
+  }
+
+  @include animated($duration);
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+// 从底部淡入动画: fadeInUp
+@mixin fadeInUp($duration: 1s){
+  @at-root {
+    @include keyframes(fadeInUp){
+      from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    };
+  }
+
+  @include animated($duration);
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+// 从底部淡出动画: fadeOutDown
+@mixin fadeOutDown($duration: 1s){
+  @at-root {
+    @include keyframes(fadeOutDown){
+      from {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+    };
+  }
+
+  @include animated($duration);
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}

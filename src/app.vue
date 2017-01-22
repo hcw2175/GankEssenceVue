@@ -1,5 +1,17 @@
+<style lang="scss">
+    @import "./assets/scss/app.scss";
+
+    .wrapper{
+        width: 375px;
+        height: 667px;
+        margin: 0 auto;
+        background-color: $white;
+        overflow: auto;
+    }
+</style>
+
 <template>
-    <div>
+    <div class="wrapper">
         <router-view class="child-view"></router-view>
     </div>
 </template>

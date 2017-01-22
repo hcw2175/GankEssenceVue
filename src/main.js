@@ -1,3 +1,9 @@
+/**
+ * VUE主入口文件
+ *
+ * @author hucw
+ */
+
 import Vue from 'vue';
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
@@ -5,7 +11,8 @@ import './assets/scss/app.scss';
 
 import App from './app';
 import router from './routers';
-import http from './components/http.js';
+import http from './components/http';
+import store from './vuex/store';
 
 // 使用第三方组件
 Vue.use(Mint);
@@ -24,6 +31,7 @@ Vue.prototype.$http = http;
 new Vue({ // eslint-disable-line
     el: '#app',
     router,
+    store,
     render: (h) => h(App)
 });
 
