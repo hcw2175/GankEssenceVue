@@ -1,39 +1,21 @@
-# GankEssenceVue
-> 干货精选 -- Vue2版本
+# gankessence-vue
 
-## Development
+> GankEssenceVue
 
-```shell
-npm i cooking-cli -g
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost:8080
 npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-## Production
-```
-npm run dist
-```
-
-## Exception
-
-### %1 is not a valid Win32 application
-
-若出现类似以下错误：
-
-```
-ERROR in ./src/assets/scss/app.scss
-Module build failed: ModuleBuildError: Module build failed: Error: %1 is not a valid Win32 application.
-\\?\C:\Users\ozhu2\.cooking\node_modules\node-sass\vendor\win32-x64-48\binding.node
-```
-
-执行以下命令：
-
-```
-npm uninstall sass-loader
-
-npm install sass-loader
-```
-
-_提示可能需要依赖`webpack`，那么再安装webpack:`npm install webpack`_
-
-## License
-ISC
+For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
